@@ -3,12 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Itim&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <title>Hint naja</title>
     <style>
         body{
             margin: 0;
             padding: 0;
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Mali", cursive;
             height: 100%;
         }
         .appPage{
@@ -35,7 +38,8 @@
             padding: 8px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            width: 200px;
+            width: 220px;
+            font-family: "Mali", cursive;
         }
         button{
             padding: 8px 20px;
@@ -58,53 +62,58 @@
 </head>
 <body>
     <div class="appPage page1">
-        <h1>page1</h1>
-        <input type="text" id="keyPage1" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <div style="line-height: 2rem;">
+            วาจากปากหากว่าแล้วค่าน้อย <br>
+            ก็อย่าพล่อยถ้อยคำแล้วทำผิด <br>
+            จงตริตรองกรองความตามคิด <br>
+            ว่ากล่าวติดวาจาแล้วอาวรณ์
+        </div>
+        <input type="text" id="keyPage1" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(1)">Submit</button>
     </div>
     <div class="appPage page2">
         <h1>page2</h1>
-        <input type="text" id="keyPage2" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <input type="text" id="keyPage2" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(2)">Submit</button>
     </div>
     <div class="appPage page3">
         <h1>page3</h1>
-        <input type="text" id="keyPage3" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <input type="text" id="keyPage3" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(3)">Submit</button>
     </div>
     <div class="appPage page4">
         <h1>page4</h1>
-        <input type="text" id="keyPage4" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <input type="text" id="keyPage4" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(4)">Submit</button>
     </div>
     <div class="appPage page5">
         <h1>page5</h1>
-        <input type="text" id="keyPage5" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <input type="text" id="keyPage5" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(5)">Submit</button>
     </div>
     <div class="appPage page6">
         <h1>page6</h1>
-        <input type="text" id="keyPage6" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <input type="text" id="keyPage6" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(6)">Submit</button>
     </div>
     <div class="appPage page7">
         <h1>page7</h1>
-        <input type="text" id="keyPage7" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <input type="text" id="keyPage7" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(7)">Submit</button>
     </div>
     <div class="appPage page8">
         <h1>page8</h1>
-        <input type="text" id="keyPage8" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <input type="text" id="keyPage8" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(8)">Submit</button>
     </div>
     <div class="appPage page9">
         <h1>page9</h1>
-        <input type="text" id="keyPage9" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <input type="text" id="keyPage9" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(9)">Submit</button>
     </div>
     <div class="appPage page10">
         <h1>page10</h1>
-        <input type="text" id="keyPage10" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <input type="text" id="keyPage10" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(10)">Submit</button>
     </div>
     <div class="appPage page11">
@@ -149,7 +158,6 @@
                     saveProgress(currentPage);
                 },1000);
                 input.style.borderColor="lime";
-                console.log("help")
             }
             else{
                 input.style.borderColor="red";
