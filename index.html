@@ -5,9 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hint naja</title>
     <style>
+        body{
+            margin: 0;
+            padding: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100%;
+        }
         .appPage{
             height: 100vh;
             width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+        }
+        .appPage:not(.page1){
+            display: none;
         }
         .page1{
             display:flex;
@@ -43,36 +58,130 @@
 </head>
 <body>
     <div class="appPage page1">
+        <h1>page1</h1>
         <input type="text" id="keyPage1" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button id="submitBtn">Submit</button>
+        <button onclick="checkKey(1)">Submit</button>
     </div>
     <div class="appPage page2">
+        <h1>page2</h1>
+        <input type="text" id="keyPage2" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <button onclick="checkKey(2)">Submit</button>
+    </div>
+    <div class="appPage page3">
+        <h1>page3</h1>
+        <input type="text" id="keyPage3" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <button onclick="checkKey(3)">Submit</button>
+    </div>
+    <div class="appPage page4">
+        <h1>page4</h1>
+        <input type="text" id="keyPage4" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <button onclick="checkKey(4)">Submit</button>
+    </div>
+    <div class="appPage page5">
+        <h1>page5</h1>
+        <input type="text" id="keyPage5" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <button onclick="checkKey(5)">Submit</button>
+    </div>
+    <div class="appPage page6">
+        <h1>page6</h1>
+        <input type="text" id="keyPage6" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <button onclick="checkKey(6)">Submit</button>
+    </div>
+    <div class="appPage page7">
+        <h1>page7</h1>
+        <input type="text" id="keyPage7" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <button onclick="checkKey(7)">Submit</button>
+    </div>
+    <div class="appPage page8">
+        <h1>page8</h1>
+        <input type="text" id="keyPage8" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <button onclick="checkKey(8)">Submit</button>
+    </div>
+    <div class="appPage page9">
+        <h1>page9</h1>
+        <input type="text" id="keyPage9" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <button onclick="checkKey(9)">Submit</button>
+    </div>
+    <div class="appPage page10">
+        <h1>page10</h1>
+        <input type="text" id="keyPage10" placeholder="Enter your key ( ꩜ ᯅ ꩜;)⁭ ⁭">
+        <button onclick="checkKey(10)">Submit</button>
+    </div>
+    <div class="appPage page11">
+        <h1>Final page</h1>
         <img src="meow.gif" alt="">
     </div>
 
     <script>
-        keyPage1 = document.getElementById("keyPage1");
+        let currentPage = 1;
 
-        document.getElementById("submitBtn").addEventListener('click',checkKey);
+        for(let i = 1 ; i <= 10 ; i++){
+            document.getElementById(`keyPage${i}`).addEventListener('keypress',function(event){
+                if(event.key === 'Enter'){
+                    checkKey(i)
+                }
+            });
+        }
 
-        keyPage1.addEventListener('keypress',function(event){
-            if(event.key==='Enter'){
-                checkKey();
-            }
-        });
+        const key = {
+            1: "one",
+            2: "two",
+            3: "three",
+            4: "four",
+            5: "five",
+            6: "six",
+            7: "seven",
+            8: "eight",
+            9: "nine",
+            10: "ten"
+        };
 
-        function checkKey(){
-            if(keyPage1.value === "cat meme"){
-                document.querySelector(".page1").style.display="none";
-                document.querySelector(".page2").style.display="flex"
+        function checkKey(pageNumber){
+            const input = document.getElementById(`keyPage${pageNumber}`);
+            const correctKey = key[pageNumber];
+
+            if(input.value === correctKey){
+                setTimeout(()=>{
+                    console.log("eSus")
+                    document.querySelector(`.page${pageNumber}`).style.display="none";
+                    document.querySelector(`.page${pageNumber + 1}`).style.display="flex";
+                    currentPage = pageNumber+1;
+                    saveProgress(currentPage);
+                },1000);
+                input.style.borderColor="lime";
+                console.log("help")
             }
             else{
-                keyPage1.style.borderColor= "red";
+                input.style.borderColor="red";
                 setTimeout(()=>{
-                    keyPage1.style.borderColor="#ccc";
-                },1000)
+                    input.style.borderColor="#ccc";
+                },800);
             }
         }
+
+        function saveProgress(pageNumber){
+            localStorage.setItem('highestPage', pageNumber);
+        }
+        function loadProgress(){
+            try{
+                const savedHighest = localStorage.getItem('highestPage');
+                if(savedHighest){
+                    const pageNum =parseInt(savedHighest);
+                    if(!isNaN(pageNum) && pageNum>1){
+                        document.querySelector(".page1").style.display="none";
+                        document.querySelector(`.page${pageNum}`).style.display="flex";
+                        currentPage = pageNum;
+                    }
+                }
+            }
+            catch(e){
+                console.error('Error loading saved progress:', e);
+            }
+        }
+
+        window.onload = function(){
+            loadProgress();
+        };
     </script>
 </body>
 </html>
