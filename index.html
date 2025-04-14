@@ -102,26 +102,11 @@
         <input type="text" id="keyPage8" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(8)">Submit</button>
     </div>
-    <div class="appPage page9">
-        <h1>page9</h1>
-        <input type="text" id="keyPage9" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(9)">Submit</button>
-    </div>
-    <div class="appPage page10">
-        <h1>page10</h1>
-        <input type="text" id="keyPage10" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(10)">Submit</button>
-    </div>
-    <div class="appPage page11">
-        <h1>Final page</h1>
-        <img src="meow.gif" alt="">
-        <input type="text" id="keyPage11" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-    </div>
 
     <script>
         let currentPage = 1;
 
-        for(let i = 1 ; i <= 10 ; i++){
+        for(let i = 1 ; i <= 8 ; i++){
             document.getElementById(`keyPage${i}`).addEventListener('keypress',function(event){
                 if(event.key === 'Enter'){
                     checkKey(i)
@@ -132,14 +117,12 @@
         const key = {
             1: "aotsong",
             2: "pngfile",
-            3: "three",
-            4: "four",
-            5: "five",
-            6: "six",
-            7: "seven",
-            8: "eight",
-            9: "nine",
-            10: "ten"
+            3: "hangena",
+            4: "iamatom",
+            5: "nonskid",
+            6: "uiiaoai",
+            7: "twoplan",
+            
         };
 
         function checkKey(pageNumber){
@@ -155,7 +138,8 @@
                 },1000);
                 input.style.borderColor="lime";
             }
-            else if(input.value === 'reset'){
+            else if(input.value === 'reset' && pageNumber>1){
+                
                 localStorage.removeItem('highestPage');
                 document.querySelector(".page1").style.display="flex"
                 document.querySelector(`.page${pageNumber}`).style.display="none"
