@@ -52,12 +52,7 @@
         button:hover{
             background-color: #429b45;
         }
-        .page2{
-            display: none;
-            justify-content: center;
-            align-items: center;
-        }
-        .page1 img{
+        .page2 img{
             width: 200px;
         }
         h1{
@@ -67,13 +62,13 @@
 </head>
 <body>
     <div class="appPage page1">
-        <h1>คำใบ้</h1>
-        <img src="img1.jpg" alt="">
+        <img src="meow.gif" alt="">
         <input type="text" id="keyPage1" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(1)">Submit</button>
     </div>
     <div class="appPage page2">
-        <h1>page2</h1>
+        <h1>คำใบ้ที่ 1</h1>
+        <img src="img1.jpg" alt="">
         <input type="text" id="keyPage2" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(2)">Submit</button>
     </div>
@@ -136,7 +131,7 @@
 
         const key = {
             1: "aotsong",
-            2: "two",
+            2: "pngfile",
             3: "three",
             4: "four",
             5: "five",
@@ -163,8 +158,9 @@
             else if(input.value === 'reset'){
                 localStorage.removeItem('highestPage');
                 document.querySelector(".page1").style.display="flex"
-                document.querySelector(`page${pageNumber}`).style.display="none"
+                document.querySelector(`.page${pageNumber}`).style.display="none"
                 currentPage = 1;
+                input.value = '';
             }
             else{
                 input.style.borderColor="red";
