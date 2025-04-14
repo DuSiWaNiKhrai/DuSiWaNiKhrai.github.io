@@ -119,6 +119,7 @@
     <div class="appPage page11">
         <h1>Final page</h1>
         <img src="meow.gif" alt="">
+        <input type="text" id="keyPage11" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
     </div>
 
     <script>
@@ -133,7 +134,7 @@
         }
 
         const key = {
-            1: "one",
+            1: "aotsong",
             2: "two",
             3: "three",
             4: "four",
@@ -151,13 +152,18 @@
 
             if(input.value === correctKey){
                 setTimeout(()=>{
-                    console.log("eSus")
                     document.querySelector(`.page${pageNumber}`).style.display="none";
                     document.querySelector(`.page${pageNumber + 1}`).style.display="flex";
                     currentPage = pageNumber+1;
                     saveProgress(currentPage);
                 },1000);
                 input.style.borderColor="lime";
+            }
+            else if(input.value === 'reset'){
+                localStorage.removeItem('highestPage');
+                document.querySelector(".page1").style.display="flex"
+                document.querySelector(`page${pageNumber}`).style.display="none"
+                currentPage = 1;
             }
             else{
                 input.style.borderColor="red";
