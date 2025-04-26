@@ -7,58 +7,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Itim&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <title>Hint naja</title>
-    <style>
-        body{
-            margin: 0;
-            padding: 0;
-            font-family: "Mali", cursive;
-            height: 100%;
-        }
-        .appPage{
-            height: 100vh;
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-            position: relative;
-        }
-        .appPage:not(.page1){
-            display: none;
-        }
-        .page1{
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            gap: 15px;
-        }
-        input{
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 220px;
-            font-family: "Mali", cursive;
-        }
-        button{
-            padding: 8px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-        button:hover{
-            background-color: #429b45;
-        }
-        .page2 img{
-            width: 200px;
-        }
-        h1{
-            margin: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="appPage page1">
@@ -68,12 +17,14 @@
     </div>
     <div class="appPage page2">
         <h1 style="font-size: 16px;">เก่งมาก เจอคำใบ้แรกแล้ว</h1>
-        <img src="img1.jpg" alt="">
+        <img src="img1.jpg" alt="รูปไม่ขึ้น ติดต่อไอจีเลย*-*">
+        <h3 style="color: #ccc;">กรอกรหัสของคุณตรงนี้</h3>
         <input type="text" id="keyPage2" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(2)">Submit</button>
     </div>
     <div class="appPage page3">
-        <h1>page3</h1>
+        <img src="img2.png" alt="รูปไม่ขึ้น ติดต่อไอจีเลย*-*">
+        <p>จุดเล็ก ๆ ที่ปรากฏขึ้นบนผิวหนัง มักมีสีน้ำตาลหรือสีดำ อาจมีลักษณะแบน นูน มีพื้นผิวเรียบหรือขรุขระ </p>
         <input type="text" id="keyPage3" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
         <button onclick="checkKey(3)">Submit</button>
     </div>
@@ -103,80 +54,6 @@
         <button onclick="checkKey(8)">Submit</button>
     </div>
 
-    <script>
-        let currentPage = 1;
-
-        for(let i = 1 ; i <= 8 ; i++){
-            document.getElementById(`keyPage${i}`).addEventListener('keypress',function(event){
-                if(event.key === 'Enter'){
-                    checkKey(i)
-                }
-            });
-        }
-
-        const key = {
-            1: "aotsong",
-            2: "pngfile",
-            3: "hangena",
-            4: "iamatom",
-            5: "nonskid",
-            6: "uiiaoai",
-            7: "twoplan",
-            
-        };
-
-        function checkKey(pageNumber){
-            const input = document.getElementById(`keyPage${pageNumber}`);
-            const correctKey = key[pageNumber];
-
-            if(input.value === correctKey){
-                setTimeout(()=>{
-                    document.querySelector(`.page${pageNumber}`).style.display="none";
-                    document.querySelector(`.page${pageNumber + 1}`).style.display="flex";
-                    currentPage = pageNumber+1;
-                    saveProgress(currentPage);
-                },1000);
-                input.style.borderColor="lime";
-            }
-            else if(input.value === 'reset' && pageNumber>1){
-                
-                localStorage.removeItem('highestPage');
-                document.querySelector(".page1").style.display="flex"
-                document.querySelector(`.page${pageNumber}`).style.display="none"
-                currentPage = 1;
-                input.value = '';
-            }
-            else{
-                input.style.borderColor="red";
-                setTimeout(()=>{
-                    input.style.borderColor="#ccc";
-                },800);
-            }
-        }
-
-        function saveProgress(pageNumber){
-            localStorage.setItem('highestPage', pageNumber);
-        }
-        function loadProgress(){
-            try{
-                const savedHighest = localStorage.getItem('highestPage');
-                if(savedHighest){
-                    const pageNum =parseInt(savedHighest);
-                    if(!isNaN(pageNum) && pageNum>1){
-                        document.querySelector(".page1").style.display="none";
-                        document.querySelector(`.page${pageNum}`).style.display="flex";
-                        currentPage = pageNum;
-                    }
-                }
-            }
-            catch(e){
-                console.error('Error loading saved progress:', e);
-            }
-        }
-
-        window.onload = function(){
-            loadProgress();
-        };
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
