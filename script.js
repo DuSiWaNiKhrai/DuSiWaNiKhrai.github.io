@@ -41,6 +41,11 @@ function checkKey(pageNumber){
         document.querySelector(`.page${pageNumber}`).style.display="none"
         currentPage = 1;
     }
+    else if(input.value === 'goback' && pageNumber>1){
+        input.value = input.value.replace('goback','');
+        document.querySelector(`.page${pageNumber}`).style.display = "none";
+        document.querySelector(`.page${pageNumber-1}`).style.display = "flex";
+    }
     else{
         input.style.borderColor="red";
         setTimeout(()=>{
