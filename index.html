@@ -3,56 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400..800&family=Itim&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-    <title>Hint naja</title>
+    <title>Happy Birthday</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="appPage page1">
-        <img src="meow.gif" alt="">
-        <input type="text" id="keyPage1" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(1)">Submit</button>
+<body >
+   <div class="container">
+        <div class="page" id="page1">
+            <div class="box-container">
+                <div class="box" id="simpleBtn" onclick="pages(2)"><span>♡</span>♡<span>♡</span></div>
+                <a class="box" id="nextBtn" href="/qrPage">NEXT</a>
+            </div>
+            <button id="reset" onclick="window.location.href='/'">reset</button>
+        </div>
+        <div class="page" id="page2">
+            <div class="box-container">
+                <span class="heart">❤︎</span>
+                <h1>Happy birthday</h1>
+                <span class="line"></span>
+                <div class="text-box">
+                    <h2>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione optio cumque alias sapiente impedit aliquid reiciendis omnis, molestiae, laudantium facilis, unde veniam! Minus vero at magni ex, temporibus odio repudiandae non est totam repellendus, laudantium tempora blanditiis sequi iste delectus similique esse hic, numquam quam accusamus maxime tempore voluptas maiores.
+                    </h2>
+                </div>
+            </div>
+            <div class="backBtn" onclick="pages(1)">
+                BACK
+            </div>
+        </div>
     </div>
-    <div class="appPage page2">
-        <img src="img2.png" alt="รูปไม่ขึ้น ติดต่อไอจีเลย*-*">
-        <p>จุดเล็ก ๆ ที่ปรากฏขึ้นบนผิวหนัง มักมีสีน้ำตาลหรือสีดำ อาจมีลักษณะแบน นูน มีพื้นผิวเรียบหรือขรุขระ </p>
-        <input type="text" id="keyPage2" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(2)">Submit</button>
-    </div>
-    <div class="appPage page3">
-        <h1>ไม่ขาว ไม่ดำ</h1>
-        <p style="color: gray; margin-bottom: 5px;">don't be racist</p>
-        <input type="text" id="keyPage3" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(3)">Submit</button>
-    </div>
-    <div class="appPage page4">
-        <h1>page4</h1>
-        <input type="text" id="keyPage4" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(4)">Submit</button>
-    </div>
-    <div class="appPage page5">
-        <h1>page5</h1>
-        <input type="text" id="keyPage5" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(5)">Submit</button>
-    </div>
-    <div class="appPage page6">
-        <h1>page6</h1>
-        <input type="text" id="keyPage6" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(6)">Submit</button>
-    </div>
-    <div class="appPage page7">
-        <h1>page7</h1>
-        <input type="text" id="keyPage7" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(7)">Submit</button>
-    </div>
-    <div class="appPage page8">
-        <h1>page8</h1>
-        <input type="text" id="keyPage8" placeholder="Enter your password ( ꩜ ᯅ ꩜;)⁭ ⁭">
-        <button onclick="checkKey(8)">Submit</button>
-    </div>
-
+    
+    
     <script src="script.js"></script>
 </body>
 </html>
