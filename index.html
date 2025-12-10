@@ -10,8 +10,8 @@
    <div class="container">
         <div class="page" id="page1">
             <div class="box-container">
-                <div class="box" id="simpleBtn" onclick="pages(2)"><span>♡</span>♡<span>♡</span></div>
-                <a class="box" id="nextBtn" href="/qrPage">NEXT</a>
+                <div class="box none-clicked" id="simpleBtn" onclick="pages(2)"><span>♡</span>♡<span>♡</span></div>
+                <a class="box none-clicked" id="nextBtn" href="/qrPage">NEXT</a>
             </div>
             <button id="reset" onclick="window.location.href='/'">reset</button>
         </div>
@@ -26,7 +26,7 @@
                     </h2>
                 </div>
             </div>
-            <div class="backBtn" onclick="pages(1)">
+            <div class="backBtn none-clicked" onclick="pages(1)">
                 BACK
             </div>
         </div>
