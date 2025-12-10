@@ -6,7 +6,7 @@ const key = params.get("key");
 
 if (key === passwordKey){
     localStorage.setItem("permission" , "true");
-    window.location.href = "/qrpage"
+    window.location.href = "/qrPage"
 }
 else if(localStorage.getItem("permission") === "true"){
     document.getElementById("nextBtn").style.display="flex";
