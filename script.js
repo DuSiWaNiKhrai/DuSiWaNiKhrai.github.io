@@ -6,7 +6,7 @@ const key = params.get("key");
 
 if (key === passwordKey){
     localStorage.setItem("permission" , "true");
-    window.location.href = "/qrPage"
+    window.location.href = "/qrpage"
 }
 else if(localStorage.getItem("permission") === "true"){
     document.getElementById("nextBtn").style.display="flex";
@@ -20,6 +20,9 @@ function pages(nextPage){
     document.getElementById(`page${nextPage}`).style.display="flex";
 }
 
-document.getElementById("reset").addEventListener("click",()=>{
+
+// ชั่วคราว
+if(new URLSearchParams(window.location.search).get("reset") === "okay"){
     localStorage.removeItem("permission")
-})
+    window.location.href="/"
+}
