@@ -5,15 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>surprise</title>
     <link rel="stylesheet" href="/qrPage/style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Itim&family=Mali:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Niramit:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Sriracha&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
 </head>
 <body>
-    <div class="page" id="page1" >
-        <h1>hello</h1>
-        <button class="home"></button>
+    <div class="page page1" id="page1">
+        <div class="envelope" id="envelope">
+            <div class="top-envelope" id="top-envelope">
+                <div class="tri"></div>
+                <div class="reg"></div>
+            </div>
+            <div class="base-envelope">
+            </div>
+            <div class="note" id="note">
+                <h1>Happy Birthday</h1>
+                <span class="date"><h2>6 Feb 2569</h2></span>
+                <div class="note-border">
+                    <span class="note-left">ถึง นางสาวอัณณ์กาญจน์ วนาอุปถัมภ์กุล (แทน)</span>
+                    <span class="note-center">ในวันนี้ 17 ปีได้ผ่านล่วงมาแล้ว หลายสิ่งคงได้เกิดขึ้นในชีวิต ทั้งความสุข ความทุกข์ ความเศร้า ความดีใจ ความผิดหวัง ความเจ็บปวด และอื่น ๆ อีกมากมายหลายอย่าง<br><br><br>
+                    หากได้อ่านจดหมายฉบับนี้เค้าขอให้เธอได้ประสบกับความสุขมากยิ่งขึ้น ความทุกข์โรคภัยไข้เจ็บทั้งหลายก็ขอให้ไม่มี ไม่ว่าในวันข้างหน้าจะเกิดเรื่องราวเหตุการณ์ใด ๆ ขึ้น เค้าคนนี้จะขออยู่ข้างเธอเสมอ จะคอยอยู่เคียงข้างในทุกเหตุการณ์<br><br><br>
+                        สิ่งใดในปีที่ผ่านมาเค้าได้ทำผิดพลาดไปแล้ว เค้าจะพยายามแก้ไขมันให้ดีขึ้น
+                </span>
+                    <span class="note-left">ด้วยรัก จาก นายชวัลวิทย์ ทรายงาม (นะโม)</span>
+                </div>
+                <div class="note-block"></div>
+            </div>
+        </div>
+        <button class="nextBtn" id="leftNote" onclick="nextPage(2)">NEXT</button>
     </div>
-    <div class="page" id="page2" onclick="pages(3)">2</div>
-    <div class="page" id="page3" onclick="pages(1)">3</div>
-    <button class="home" onclick="window.location.href='/'">home</button>
+    <div class="page page2" id="page2"></div>
+    <div class="page page3" id="page3"></div>
+    <div class="page page4" id="page4"></div>
+
     <script src="/qrPage/script.js"></script>
 </body>
 </html>
