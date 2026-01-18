@@ -9,7 +9,7 @@ note.addEventListener("click", function(){
     document.getElementById("leftNote").style.opacity= 1;
 })
 
-function nextPage(page){
-    document.getElementById(`page${page-1}`).style.display="none";
-    document.getElementById(`page${page}`).style.display="flex";
+function nextPage(nextPage){
+    document.querySelectorAll(".page").forEach(currentPage =>{currentPage.style.display="none";});
+    document.getElementById(`page${nextPage}`).style.display="flex";
 }
