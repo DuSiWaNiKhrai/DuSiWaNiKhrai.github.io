@@ -22,12 +22,13 @@
             </div>
             <div class="note" id="note">
                 <h1>Happy Birthday</h1>
-                <span class="date"><h2>6 Feb 2569</h2></span>
                 <div class="note-border">
+                    <span class="date"><h2>6 Feb 2569</h2></span>
                     <span class="note-left">ถึง นางสาวอัณณ์กาญจน์ วนาอุปถัมภ์กุล (แทน)</span>
-                    <span class="note-center">ในวันนี้ 17 ปีได้ผ่านล่วงมาแล้ว หลายสิ่งคงได้เกิดขึ้นในชีวิต ทั้งความสุข ความทุกข์ ความเศร้า ความดีใจ ความผิดหวัง ความเจ็บปวด และอื่น ๆ อีกมากมายหลายอย่าง<br><br><br>
-                    หากได้อ่านจดหมายฉบับนี้เค้าขอให้เธอได้ประสบกับความสุขมากยิ่งขึ้น ความทุกข์โรคภัยไข้เจ็บทั้งหลายก็ขอให้ไม่มี ไม่ว่าในวันข้างหน้าจะเกิดเรื่องราวเหตุการณ์ใด ๆ ขึ้น เค้าคนนี้จะขออยู่ข้างเธอเสมอ จะคอยอยู่เคียงข้างในทุกเหตุการณ์<br><br><br>
-                        สิ่งใดในปีที่ผ่านมาเค้าได้ทำผิดพลาดไปแล้ว เค้าจะพยายามแก้ไขมันให้ดีขึ้น
+                    <span class="note-center">
+                        <span class="box-in-note">ในวันนี้ 17 ปีได้ผ่านล่วงมาแล้ว หลายสิ่งคงได้เกิดขึ้นในชีวิต ทั้งความสุข ความทุกข์ ความเศร้า ความดีใจ ความผิดหวัง ความเจ็บปวด และอื่น ๆ อีกมากมายหลายอย่าง</span>
+                        <span class="box-in-note">หากได้อ่านจดหมายฉบับนี้เค้าขอให้เธอได้ประสบกับความสุขมากยิ่งขึ้น ความทุกข์โรคภัยไข้เจ็บทั้งหลายก็ขอให้ไม่มี ไม่ว่าในวันข้างหน้าจะเกิดเรื่องราวเหตุการณ์ใด ๆ ขึ้น เค้าคนนี้จะขออยู่ข้างเธอเสมอ จะคอยอยู่เคียงข้างในทุกเหตุการณ์</span>
+                        <span class="box-in-note">สิ่งใดในปีที่ผ่านมาเค้าได้ทำผิดพลาดไปแล้ว เค้าจะพยายามแก้ไขมันให้ดีขึ้น</span>
                 </span>
                     <span class="note-left">ด้วยรัก จาก นายชวัลวิทย์ ทรายงาม (นะโม)</span>
                 </div>
@@ -107,9 +108,32 @@
         <button class="nextBtn" id="leftNote" onclick="nextPage(4)">NEXT</button>
     </div>
     <div class="page page4" id="page4">
-        <a class="nextBtn" href="/" style="text-decoration: none; display: flex; justify-content: center;align-items: center;">NEXT</a>
+        <div class="pop-up">
+            <span>สิ่งใดที่ปรารถนาไว้ขอให้สมหวังทุกประการ</span>
+            <div class="close-container" onclick="closePopUp()">
+                <h1>ปิด X</h1>
+            </div>
+        </div>
+        <div class="huge-text-container">
+            <h1>HAPPY BIRTHDAY</h1>    
+        </div>
+        <div id="birthday-cake">
+            <div class="cake">
+                <div class="middle"></div>
+                <div class="chocs"></div>
+                <div class="top"></div>
+            </div>
+            <div class="candles">
+                <div class="flame" onclick="cancelFlame(1)"></div>
+                <div class="flame2" onclick="cancelFlame(2)"></div>
+                <div class="flame3" onclick="cancelFlame(3)"></div>
+                <div class="shadows"></div>
+            </div>
+        </div>
+        <p>แตะบนเปลวไฟเพื่่อดับไฟ</p>
     </div>
 
+        
     <script src="/qrPage/script.js"></script>
 </body>
 </html>
