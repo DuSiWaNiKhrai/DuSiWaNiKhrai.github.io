@@ -547,7 +547,9 @@ body{
         height: 544.5px;
         transform: translateY(-130px);
     }
-    
+    .page1 .open{
+        transform: translateY(0);
+    }
     .page1 .base-envelope {
         height: 314.25px;
     }
@@ -703,7 +705,9 @@ body{
         height: 363px;
         transform: translateY(-90px);
     }
-    
+    .page1 .open{
+        transform: translateY(0);
+    }
     .page1 .base-envelope {
         height: 209.5px;
     }
@@ -848,7 +852,9 @@ body{
         height: 299.25px;
         transform: translateY(-60px);
     }
-    
+    .page1 .open{
+        transform: translateY(0);
+    }
     .page1 .base-envelope {
         height: 172.625px;
     }
