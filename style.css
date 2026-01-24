@@ -98,7 +98,7 @@ body{
     backdrop-filter: blur(10px);
     border-radius: 50px;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     box-shadow: 0 4px 4px rgba(0,0,0,0.25);
@@ -112,7 +112,7 @@ body{
 }
 #page2 .heart{
     color: #FDAAA8;
-    font-size: 110px;
+    font-size: 80px;
 }
 #page2 h1{
     color:#FF7474;
@@ -127,15 +127,18 @@ body{
     margin:25px 0;
 }
 #page2 .text-box{
+    height: max-content;
     width: 90%;
     overflow: hidden;
-}
-#page2 .text-box h2{
     text-align: center;
     color:#FF7474;
-    margin:0;
+    display: flex;
+    flex-direction: column;
+    font-size: 28px;
+    flex: 1;
+    justify-content: space-evenly;
+    padding: 0 10px 10px 10px;
 }
-
 /* Tablet (iPad) */
 @media (min-width: 768px) and (max-width: 1024px) {
     #page1 .box-container {
@@ -169,8 +172,8 @@ body{
         font-size: 55px;
     }
     
-    #page2 .text-box h2 {
-        font-size: 28px;
+    #page2 .text-box {
+        font-size: 32px;
     }
     
     #page2 .backBtn {
@@ -219,9 +222,9 @@ body{
         margin: 20px 0;
     }
     
-    #page2 .text-box h2 {
-        font-size: 20px;
-        line-height: 1.6;
+    #page2 .text-box {
+        font-size: 22px;
+        line-height: 1.5;
     }
     
     #page2 .backBtn {
@@ -247,8 +250,8 @@ body{
         font-size: 35px;
     }
     
-    #page2 .text-box h2 {
-        font-size: 18px;
+    #page2 .text-box{
+        font-size: 20px;
     }
     
     #page2 .backBtn {
